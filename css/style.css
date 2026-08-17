@@ -363,8 +363,7 @@ body:not(.is-home) .site-header {
 .about-portrait { position: sticky; top: 120px; }
 .about-portrait img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
   background: var(--bg-deep);
 }
 .about-portrait figcaption {
@@ -544,6 +543,35 @@ body:not(.is-home) .site-header {
   transition: opacity .3s;
 }
 .lightbox__close:hover { opacity: 1; }
+
+/* 灯箱左右切换按钮 + 计数 */
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 210;
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  opacity: .55;
+  transition: opacity .3s;
+}
+.lightbox__nav:hover { opacity: 1; }
+.lightbox__nav--prev { left: 18px; }
+.lightbox__nav--next { right: 18px; }
+.lightbox__count {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 210;
+  color: rgba(255,255,255,.75);
+  font-size: .82rem;
+  letter-spacing: .2em;
+}
 
 /* ---------- 文字链接按钮 ---------- */
 .link-more {

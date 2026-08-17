@@ -32,28 +32,63 @@
     });
   }
 
-  /* ---------- 灯箱：点击图库图片放大 ---------- */
+  /* ---------- 灯箱：点击图库图片放大，左右切换 ---------- */
   var lightbox = document.querySelector('.lightbox');
   var lightboxImg = lightbox ? lightbox.querySelector('img') : null;
   if (lightbox && lightboxImg) {
-    document.addEventListener('click', function (e) {
-      var img = e.target.closest('[data-lightbox]');
-      if (img) {
-        lightboxImg.src = img.getAttribute('src');
-        lightboxImg.alt = img.getAttribute('alt') || '';
-        lightbox.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      }
-    });
+    var items = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+    var current = -1;
+
+    // 注入左右切换按钮与计数
+    var prevBtn = document.createElement('button');
+    prevBtn.className = 'lightbox__nav lightbox__nav--prev';
+    prevBtn.setAttribute('aria-label', '上一张');
+    prevBtn.innerHTML = '&#8249;';
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'lightbox__nav lightbox__nav--next';
+    nextBtn.setAttribute('aria-label', '下一张');
+    nextBtn.innerHTML = '&#8250;';
+    var counter = document.createElement('div');
+    counter.className = 'lightbox__count';
+    lightbox.appendChild(prevBtn);
+    lightbox.appendChild(nextBtn);
+    lightbox.appendChild(counter);
+
+    function show(i) {
+      if (!items.length) return;
+      current = (i + items.length) % items.length;
+      lightboxImg.src = items[current].getAttribute('src');
+      lightboxImg.alt = items[current].getAttribute('alt') || '';
+      counter.textContent = (current + 1) + ' / ' + items.length;
+    }
+    function open(i) {
+      show(i);
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
     function closeLightbox() {
       lightbox.classList.remove('is-open');
       document.body.style.overflow = '';
     }
+    function step(d) {
+      if (!lightbox.classList.contains('is-open')) return;
+      show(current + d);
+    }
+
+    document.addEventListener('click', function (e) {
+      var img = e.target.closest('[data-lightbox]');
+      if (img) open(items.indexOf(img));
+    });
+    prevBtn.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+    nextBtn.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
     lightbox.addEventListener('click', function (e) {
       if (e.target !== lightboxImg) closeLightbox();
     });
     document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
       if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
     });
   }
 
