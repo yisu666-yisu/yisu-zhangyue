@@ -290,8 +290,8 @@ body:not(.is-home) .site-header {
 /* ---------- 项目卡片网格 ---------- */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 4vw, 56px);
 }
 .project-card { display: block; }
 .project-card__media {
@@ -474,6 +474,25 @@ body:not(.is-home) .site-header {
 .unit-block__head .keywords { color: var(--ink-faint); margin-top: 8px; letter-spacing: .1em; font-size: .9rem; }
 .unit-block__text { max-width: 46em; color: var(--ink-soft); line-height: 2.1; margin-bottom: 40px; font-size: 1.02rem; }
 
+/* 项目页：封面图缩小居中 + 下滑提示 */
+.unit-cover { max-width: 960px; margin: 0 auto; }
+.scroll-hint--block {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-faint);
+  font-size: .72rem;
+  letter-spacing: .3em;
+}
+.scroll-hint--block::after {
+  content: "";
+  width: 1px; height: 36px;
+  background: var(--ink-faint);
+  animation: scrollLine 2.2s var(--ease) infinite;
+}
+
 /* ---------- 引用 ---------- */
 .pull-quote {
   font-family: var(--serif);
@@ -589,7 +608,7 @@ body:not(.is-home) .site-header {
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 900px) {
-  .project-grid { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery, .gallery--2 { grid-template-columns: repeat(2, 1fr); }
   .gallery--flow figure:nth-child(3n+2) { transform: none; }
   .about-grid { grid-template-columns: 1fr; }
@@ -623,6 +642,7 @@ body:not(.is-home) .site-header {
 
 @media (max-width: 560px) {
   .gallery, .gallery--2 { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
   .hero__role { letter-spacing: .22em; }
   .project-card__meta { flex-direction: column; gap: 4px; }
   .project-card__sub { text-align: left; }
