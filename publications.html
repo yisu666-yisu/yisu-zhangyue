@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成果文章 — 一粟</title>
+  <meta name="description" content="一粟（张悦）的成果文章与出版物：中国摄影家、中国艺术报、人像摄影、雄安画报、城市环境设计 UED 等刊发作品。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 成果文章条目（可点击打开 PDF） */
+    .pub {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding-left .3s var(--ease);
+    }
+    .pub:first-of-type { border-top: 1px solid var(--line); }
+    .pub__t { font-size: 1.02rem; line-height: 1.6; transition: color .3s var(--ease); }
+    .pub__m { font-size: .78rem; color: var(--ink-faint); letter-spacing: .05em; margin-top: 4px; }
+    .pub__go {
+      flex-shrink: 0;
+      font-size: .74rem;
+      letter-spacing: .1em;
+      color: var(--accent);
+      opacity: .55;
+      white-space: nowrap;
+      transition: opacity .3s var(--ease), transform .3s var(--ease);
+    }
+    .pub:hover { padding-left: 8px; }
+    .pub:hover .pub__t { color: var(--accent-ink); }
+    .pub:hover .pub__go { opacity: 1; transform: translateX(2px); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">一粟</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="about.html">关于</a>
+        <a href="works.html">摄影</a>
+        <a href="writing.html">文字</a>
+        <a href="publications.html" class="is-active">成果</a>
+        <a href="exhibitions.html">展览</a>
+        <a href="practice.html">跨界</a>
+        <a href="contact.html">联系</a>
+      </nav>
+      <button class="nav-toggle" aria-label="菜单" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="project-hero">
+    <div class="container">
+      <span class="label reveal">Publications · 成果文章</span>
+      <h1 class="page-title reveal" style="margin-top:18px;">成果文章</h1>
+      <p class="lead reveal" style="margin-top:28px; max-width:42em;">
+        已刊发作品与出版物的完整原文。点击任意条目即可在线阅读 PDF。
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container container--narrow">
+
+      <!-- 01 杂志刊发作品 -->
+      <div class="section-head reveal">
+        <span class="no">01</span>
+        <span class="label">杂志刊发作品</span>
+        <span class="rule"></span>
+      </div>
+
+      <a class="pub reveal" href="publications/zgphoto-xiongan.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《雄安 · 人 · 我》</div><div class="pub__m">《中国摄影家》杂志 · 独作</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/zgphoto-their-stories.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《他们的故事》</div><div class="pub__m">《中国摄影家》· 中国艺术研究院摄影专业作品系列之十</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/renxiang-2024-01.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《我身边的影像》</div><div class="pub__m">《人像摄影》2024年第1期 · P68-75</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/shanhaixige-libretto.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《山海黎歌》文学台本</div><div class="pub__m">文学台本 · 独立创作</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+
+      <!-- 02 月赛点评 -->
+      <div class="section-head reveal" style="margin-top:72px;">
+        <span class="no">02</span>
+        <span class="label">月赛点评 · 中国摄影家杂志</span>
+        <span class="rule"></span>
+      </div>
+
+      <a class="pub reveal" href="publications/zgphoto-2023-06.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《月赛 · 建筑之美》</div><div class="pub__m">《中国摄影家》2023年第6期 · 参与点评</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/zgphoto-2023-09.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《月赛 · 暗光下的感动》</div><div class="pub__m">《中国摄影家》2023年第9期 · 参与点评</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/zgphoto-2024-03.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《月赛 · 建筑之美》</div><div class="pub__m">《中国摄影家》2024年第3期 · 参与点评</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/zgphoto-2024-10.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《月赛 · 色彩之美》</div><div class="pub__m">《中国摄影家》2024年第10期 · 参与点评</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+
+      <!-- 03 报纸文章 -->
+      <div class="section-head reveal" style="margin-top:72px;">
+        <span class="no">03</span>
+        <span class="label">报纸文章 · 中国艺术报</span>
+        <span class="rule"></span>
+      </div>
+
+      <a class="pub reveal" href="publications/zgysb-digital-education.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《数智时代高校摄影教育的挑战与机遇》</div><div class="pub__m">《中国艺术报》2026.04.29 第5版 · 独作</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/zgysb-ai.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《从传统滤镜到AI大模型引发的摄影创作思考》</div><div class="pub__m">《中国艺术报》· 独作</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+
+      <!-- 04 人物专访 -->
+      <div class="section-head reveal" style="margin-top:72px;">
+        <span class="no">04</span>
+        <span class="label">人物专访</span>
+        <span class="rule"></span>
+      </div>
+
+      <a class="pub reveal" href="publications/cpanet-top10-interview.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《中国摄影网「十佳摄影师」专访》</div><div class="pub__m">张悦 著</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/ued-lin-congran.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《建筑师林琮然的设计思想演化论》</div><div class="pub__m">《城市环境设计 UED》· 专访</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+
+      <!-- 05 雄安专题报道 -->
+      <div class="section-head reveal" style="margin-top:72px;">
+        <span class="no">05</span>
+        <span class="label">雄安专题报道 · 雄安画报</span>
+        <span class="rule"></span>
+      </div>
+
+      <a class="pub reveal" href="publications/xiongan-huabao-2024-01.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《雄安画报》2024年第1期</div><div class="pub__m">摄影报道</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/xiongan-huabao-2024-02.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《雄安画报》2024年第2期</div><div class="pub__m">摄影报道</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+
+      <!-- 06 学术 / 其他 -->
+      <div class="section-head reveal" style="margin-top:72px;">
+        <span class="no">06</span>
+        <span class="label">学术 · 其他</span>
+        <span class="rule"></span>
+      </div>
+
+      <a class="pub reveal" href="publications/master-thesis.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">硕士学位论文《摄影记录和表现城市发展进程》</div><div class="pub__m">张悦</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/zgphoto-text.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">《中国摄影家》文字整理</div><div class="pub__m">杂志文字整理</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+      <a class="pub reveal" href="publications/achievements-index.pdf" target="_blank" rel="noopener">
+        <div><div class="pub__t">成果目录指引</div><div class="pub__m">完整成果清单</div></div>
+        <span class="pub__go">阅读 ↗</span>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="brand">一粟</div>
+      <div>© 2026 All Rights Reserved</div>
+    </div>
+  </footer>
+
+  <div class="lightbox" role="dialog" aria-label="图片预览">
+    <button class="lightbox__close">关闭 CLOSE</button>
+    <img src="" alt="">
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
